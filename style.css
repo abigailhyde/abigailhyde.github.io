@@ -1,40 +1,55 @@
 @charset "utf-8";
 
+html {
+	height: 100%; 
+}
+
 #coverphoto {
 	width: 100%;
 	height: auto;
 }
 
-#nav {
+nav {
     position: absolute;
     left: 0px;
-    height: 40px;
-    background-color: #2C64B4;
+    height: 50px;
+    background-color: #F7EDE2;
     width: 100%;
     margin: 0 auto;
 }
-#nav ul {
+nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
 }
-#nav ul li {
+nav ul li {
     margin: 0;
     padding: 0;
     display: inline-block;
 }
-#nav ul li a {
+nav ul li a {
     text-decoration: none;
     padding: 10px 20px;
     display: block;
-    color: #FFF;
+    color: #84A59D;
     text-align: center;
 }
 
 header {
 	width:100%;
 	text-align:center;
+}
+
+#about-text {
+	padding-right: 350px;
+	padding-left: 350px;
+	line-height: 30px;
+}
+
+h2 {
+	color: #EF6D6A;
+	padding-top: 30px;
 }
 
 
