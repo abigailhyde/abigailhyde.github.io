@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+#coverphoto {
+	width: 100%;
+	height: auto;
+}
+
+#nav {
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    background-color: #2C64B4;
+    width: 100%;
+    margin: 0 auto;
+}
+#nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+#nav ul li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+#nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: #FFF;
+    text-align: center;
+}
+
+header {
+	width:100%;
+	text-align:center;
+}
+
+
