@@ -50,7 +50,7 @@ header {
 	text-align:center;
 }
 
-#about-text {
+.about-text {
 	padding-right: 20%;
 	padding-left: 350px;
 	line-height: 30px;
