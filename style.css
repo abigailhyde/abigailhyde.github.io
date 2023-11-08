@@ -50,7 +50,7 @@ header {
 	text-align:center;
 }
 
-.about-text {
+#about-text {
 	padding-right: 20%;
 	padding-left: 350px;
 	line-height: 30px;
@@ -62,7 +62,7 @@ h2 {
 }
 
 h1 {
-	color: #EF6D6A;
+	color: #F6BD60;
 	padding-top: 30px;
 }
 
@@ -81,6 +81,17 @@ footer p {
 	font-weight: bold;
 	margin-left: 10px;
 	align-self: center;
+}
+
+.flex-container {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid {
+	max-width: 50%;
 }
 
 
