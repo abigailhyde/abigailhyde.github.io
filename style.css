@@ -70,4 +70,17 @@ iframe {
 	padding-top: 30px;
 }
 
+footer {
+	margin-top: 20px;
+	padding: 8px;
+	background-color: #F5CAC3;
+}
+
+footer p {
+	color: #F7EDE2;
+	font-weight: bold;
+	margin-left: 10px;
+	align-self: center;
+}
+
 
