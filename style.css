@@ -5,7 +5,12 @@ html {
 }
 
 body {
-	margin: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+main {
+	margin: 12px;
 }
 
 #coverphoto {
@@ -47,11 +52,16 @@ header {
 
 #about-text {
 	padding-right: 20%;
-	padding-left: 20%;
+	padding-left: 350px;
 	line-height: 30px;
 }
 
 h2 {
+	color: #EF6D6A;
+	padding-top: 30px;
+}
+
+h1 {
 	color: #EF6D6A;
 	padding-top: 30px;
 }
