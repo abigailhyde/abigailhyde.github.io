@@ -1,38 +1,279 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>home | abigail hyde</title>
-<link rel="icon" type="image/x-icon" href="./favicon.ico">
-<link href="style.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-body, td, th {
-    color: #24312d;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-body {
-    background-color: #F7EDE2;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio with Smooth Scroll</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 150px;
+            background-color: white;
+            color: black;
+            margin-bottom: 40px;
+        }
+        .company-name {
+            font-size: 1rem;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #540f21;
+        }
+        .container {
+            display: flex;
+            padding: 20px 150px;
+            gap: 20px;
+            margin-top: 40px;
+            align-items: flex-start;
+        }
+        .about-me {
+            flex: 0 0 66.66%;
+            font-size: 1rem;
+        }
+        .about-me h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            margin-top: -10px;
+        }
+        .photo {
+            flex: 0 0 33.33%;
+            display: flex;
+            justify-content: center;
+        }
+        .photo img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-right: 10px;
+            background-color: #540f21;
+            color: white; 
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons button:hover {
+            background-color: #410b1a;
+        }
+        .projects {
+            padding: 40px 150px;
+        }
+        .projects h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .project-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            flex: 0 0 48%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .contact {
+            padding: 40px 150px;
+            background-color: white;
+        }
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #540f21;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact button:hover {
+            background-color: #410b1a;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-size: 0.9rem;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #540f21;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            display: none; /* Initially hidden */
+        }
+        .back-to-top:hover {
+            background-color: #410b1a;
+        }
+    </style>
 </head>
-
 <body>
-<header class="header"> <img src="images/abigaillogo.svg" id="logo" alt="A hand drawn daisy with the name 'abigail' written underneath in all lowercase letters."/> </header>
-<nav>
-  <ul class="flex flex-row gap-5 ">
-    <li class="nav-item"><a href="/">home</a></li>
-    <li class="nav-item"><a href="projects.html">projects</a></li>
-    <li class="nav-item"><a href="resume.html">résumé</a></li>
-    <li class="nav-item"><a href="https://github.com/AbigailHyde" target="_blank">github</a></li>
-  </ul>
-</nav>
-<div> <img src="images/wide.png" id="coverphoto" alt="A photo of a young woman, Abigail, smiling in front of a green bush. The phrase 'Hi! My name is Abigail Hyde!' is written across the image in Abigail's handwriting."/> </div>
-<a>
-<h2 style="text-align:center">Nice to meet you, and aloha!</h2>
-<p id="about-text" style="text-align:center"> My name is Abigail Hyde. Raised in rural Ohio, I now live in beautiful Hau`ula, Hawaii. I graduated from Brigham Young University - Hawaii in 2022 with a degree in Computer Science. I currently work as a Technical Analyst for BYUH's IT Department. Before coming to work at BYUH, I spent several months as a remote web development intern for FamilySearch. In my spare time, I enjoy reading and crocheting. I am also an amateur radio operator (KE8LGD) - catch me on the <a href="https://www.hmasn.com/">Hawaii-Mainland Allstar Net</a>!</p>
-</a>
-<footer>
-  <p style="text-align:center">Made with &lt;3 by Abigail Hyde, &#169;2023</p>
-</footer>
+    <header>
+        <div class="company-name">Abigail Hyde</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#projects" class="scroll-link">Projects</a>
+            <a href="#contact" class="scroll-link">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="about-me">
+            <h2>Hello! I'm Abigail Hyde.</h2>
+            <p>I'm a computer scientist with a focus on human-computer interaction (HCI) and the history and contributions of women in computing. I graduated from BYU Hawaii with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at Georgia Tech, specializing in HCI.</p>
+            <div class="buttons">
+                <button>GitHub</button>
+                <button>Contact Me</button>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="images/headshot.jpeg" alt="Your Photo">
+        </div>
+    </div>
+
+    <div class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="card">
+                <img src="images/fschat.png" alt="Project 1">
+                <div class="card-content">
+                    <h3>FamilySearch Chat</h3>
+                    <p>I helped to develop the new FamilySearch chat system. Check out the blog post <a href="https://www.familysearch.org/en/blog/new-familysearch-chat" target="_blank">here</a>.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/project2.jpg" alt="Project 2">
+                <div class="card-content">
+                    <h3>Temples Timeline</h3>
+                    <p>Brief description of Project 2. Check out the paper <a href="https://scholarsarchive.byu.edu/byusq/vol60/iss4/5/" target="_blank">here</a>.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/project3.jpg" alt="Project 3">
+                <div class="card-content">
+                    <h3>Project 3</h3>
+                    <p>Brief description of Project 3.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/project4.jpg" alt="Project 4">
+                <div class="card-content">
+                    <h3>Project 4</h3>
+                    <p>Brief description of Project 4.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2025 Abigail Hyde. All rights reserved.
+    </footer>
+
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
