@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio with Smooth Scroll</title>
     <style>
-        /* Global styles for body */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             line-height: 1.6;
         }
-        
-        /* Header styles */
         header {
             display: flex;
             justify-content: space-between;
@@ -21,73 +18,26 @@
             background-color: white;
             color: black;
             margin-bottom: 40px;
-            position: relative;
         }
-
-        /* Company Name styles */
         .company-name {
             font-size: 1rem;
         }
-
-        /* Navigation styles */
         nav {
             display: flex;
             gap: 15px;
         }
-
-        /* Navigation link styles */
         nav a {
             color: black;
             text-decoration: none;
             font-size: 1rem;
             transition: color 0.3s;
         }
-
         nav a:hover {
             color: #101010;
         }
-
-        /* Hamburger menu styles */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            position: relative;
-            width: 30px;
-            height: 25px;
+        #navbar {
+            margin: 0; /* Default margin */
         }
-
-        .hamburger div {
-            width: 100%;
-            height: 4px;
-            background-color: black;
-            margin: 6px 0;
-            transition: transform 0.3s, opacity 0.3s;
-        }
-
-        /* Hamburger X styles */
-        .hamburger.open div:nth-child(1) {
-            transform: rotate(45deg);
-            position: absolute;
-            top: 0;
-        }
-
-        .hamburger.open div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.open div:nth-child(3) {
-            transform: rotate(-45deg);
-            position: absolute;
-            top: 0;
-        }
-
-        /* Menu items that are displayed when hamburger is open */
-        .menu {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Container styles */
         .container {
             display: flex;
             padding: 20px 150px;
@@ -95,37 +45,28 @@
             margin-top: 40px;
             align-items: flex-start;
         }
-
-        /* About Me section styles */
         .about-me {
             flex: 0 0 66.66%;
             font-size: 1rem;
         }
-
         .about-me h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             margin-top: -10px;
         }
-
-        /* Photo section styles */
         .photo {
             flex: 0 0 33.33%;
             display: flex;
             justify-content: center;
         }
-
         .photo img {
             width: 100%;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        /* Button styles */
         .buttons {
             margin-top: 20px;
         }
-
         .buttons button {
             padding: 10px 20px;
             font-size: 1rem;
@@ -137,27 +78,21 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .buttons button:hover {
             background-color: #ffffff;
         }
-
-        /* Project section styles */
         .projects {
             padding: 40px 150px;
         }
-
         .projects h2 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-
         .project-cards {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
         }
-
         .card {
             flex: 0 0 48%;
             border: 1px solid #ddd;
@@ -166,54 +101,43 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-
         .card:hover {
             transform: scale(1.05);
         }
-
         .card img {
             width: 100%;
             border-bottom: 1px solid #ddd;
         }
-
         .card-content {
             padding: 20px;
         }
-
         .card h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
-
         .card p {
             font-size: 1rem;
             color: #666;
         }
-
-        /* Contact section styles */
         .contact {
             padding: 40px 150px;
             background-color: white;
         }
-
         .contact h2 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-
         .contact form {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
         .contact input, .contact textarea {
             padding: 10px;
             font-size: 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-
         .contact button {
             padding: 10px 20px;
             font-size: 1rem;
@@ -224,12 +148,9 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .contact button:hover {
             background-color: #ffffff;
         }
-
-        /* Footer styles */
         footer {
             text-align: center;
             padding: 20px;
@@ -237,8 +158,6 @@
             color: rgb(0, 0, 0);
             font-size: 0.9rem;
         }
-
-        /* Back to top button styles */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -254,7 +173,6 @@
             transition: background-color 0.3s;
             display: none; /* Initially hidden */
         }
-
         .back-to-top:hover {
             background-color: #ffffff;
         }
@@ -264,46 +182,63 @@
             header, .container, .projects, .contact {
                 padding: 10px 50px;
             }
+            #navbar {
+                margin: 0 20%; /* Apply 20% margin on both left and right for larger screens */
+            }
         }
 
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+                display: none;
             }
-
             nav {
                 display: none;
-                flex-direction: column;
-                gap: 5px;
-                width: 100%;
             }
-
-            .hamburger {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-
-            nav.open {
-                display: flex;
-            }
-
             .container {
-                flex-direction: column-reverse; /* Move the photo above the About Me section */
+                flex-direction: column;
+                gap: 20px;
             }
-
             .about-me {
                 flex: 1 0 auto;
             }
-
             .photo {
                 flex: 1 0 auto;
                 width: 100%;
             }
+            .projects .project-cards .card {
+                flex: 1 0 100%;
+            }
+        }
 
+        @media (max-width: 480px) {
+            header, .container, .projects, .contact {
+                padding: 10px 20px;
+            }
+            .about-me h2 {
+                font-size: 2rem;
+            }
+            .projects h2, .contact h2 {
+                font-size: 1.5rem;
+            }
+            .card h3 {
+                font-size: 1.25rem;
+            }
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse; /* Move the photo above the About Me section */
+            }
+            .about-me {
+                flex: 1 0 auto;
+            }
+            .photo {
+                flex: 1 0 auto;
+                width: 100%;
+            }
             .photo img {
                 width: 200px; /* Make the image smaller */
                 height: 200px; /* Ensure the height matches the width for a circular shape */
@@ -314,26 +249,15 @@
     </style>
 </head>
 <body>
-    <!-- Header section -->
     <header>
         <div class="company-name">Abigail Hyde</div>
-        <!-- Hamburger Menu -->
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <!-- Navigation -->
-        <nav id="nav">
+        <nav>
             <a href="index.html"><span id="home">Home</span></a>
             <a href="#projects" class="scroll-link"><span id="projects">Projects</span></a>
             <a href="#contact" class="scroll-link"><span id="contact">Contact</span></a>
         </nav>
     </header>
-
-    <!-- Main Content -->
     <div class="container">
-        <!-- About Me Section -->
         <div class="about-me">
             <h2><span id="tagline">Hello! I'm Abigail Hyde.</span></h2>
             <p>I'm a computer scientist with a focus on <span id="hci">human-computer interaction</span> (HCI) and the history and contributions of women in computing. I graduated from BYU Hawaii with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at Georgia Tech, specializing in HCI.</p>
@@ -342,18 +266,14 @@
                 <a href="https://www.linkedin.com/in/abigailgracehyde/" target="_blank"><button><span id="linkedinText">LinkedIn</span></button></a>
             </div>
         </div>
-        
-        <!-- Photo Section -->
         <div class="photo">
             <img src="images/headshot.jpeg" alt="Your Photo">
         </div>
     </div>
 
-    <!-- Projects Section -->
     <div class="projects" id="projects">
         <h2>Projects</h2>
         <div class="project-cards">
-            <!-- Project Cards -->
             <div class="card">
                 <img src="images/fschat.png" alt="Project 1">
                 <div class="card-content">
@@ -385,7 +305,6 @@
         </div>
     </div>
 
-    <!-- Contact Section -->
     <div class="contact" id="contact">
         <h2>Contact Me</h2>
         <form>
@@ -396,17 +315,15 @@
         </form>
     </div>
 
-    <!-- Footer Section -->
     <footer>
         <span id="footerText">&copy; 2025 Abigail Hyde. All rights reserved.</span>
     </footer>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop"><span id="backToTopText">Back to Top</span></button>
 
     <script src="https://cdn.jsdelivr.net/npm/rough-notation/lib/rough-notation.iife.min.js"></script>
     <script>
-
+        
         // Rough Notation
         const taglineElement = document.querySelector('#tagline');
         const hciElement = document.querySelector('#hci');
@@ -541,12 +458,6 @@
         });
         submitHoverElement.addEventListener('mouseout', () => {
             submitHoverAnnotation.hide(); // Hide annotation when hover ends
-        });
-
-        // Toggle the hamburger menu
-        document.getElementById("hamburger").addEventListener("click", function() {
-            this.classList.toggle("open");
-            document.getElementById("nav").classList.toggle("open");
         });
 
         // Smooth scrolling for navigation links
