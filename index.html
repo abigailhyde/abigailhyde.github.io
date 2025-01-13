@@ -68,15 +68,15 @@
             padding: 10px 20px;
             font-size: 1rem;
             margin-right: 10px;
-            background-color: #540f21;
-            color: white; 
-            border: none;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0); 
+            border: 1px solid black;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         .buttons button:hover {
-            background-color: #410b1a;
+            background-color: #ffffff;
         }
         .projects {
             padding: 40px 150px;
@@ -138,15 +138,15 @@
         .contact button {
             padding: 10px 20px;
             font-size: 1rem;
-            background-color: #540f21;
-            color: white;
-            border: none;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: 1px solid black;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         .contact button:hover {
-            background-color: #410b1a;
+            background-color: #ffffff;
         }
         footer {
             text-align: center;
@@ -161,9 +161,9 @@
             right: 20px;
             padding: 10px 20px;
             font-size: 1rem;
-            background-color: #540f21;
-            color: white;
-            border: none;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: 1px solid black;
             border-radius: 4px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -186,8 +186,8 @@
     </header>
     <div class="container">
         <div class="about-me">
-            <h2>Hello! I'm Abigail Hyde.</h2>
-            <p>I'm a computer scientist with a focus on human-computer interaction (HCI) and the history and contributions of women in computing. I graduated from BYU Hawaii with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at Georgia Tech, specializing in HCI.</p>
+            <h2><span id="tagline">Hello! I'm Abigail Hyde.</span></h2>
+            <p>I'm a computer scientist with a focus on <span id="hci">human-computer interaction</span> (HCI) and the history and contributions of women in computing. I graduated from BYU Hawaii with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at Georgia Tech, specializing in HCI.</p>
             <div class="buttons">
                 <a href="https://github.com/abigailhyde" target="_blank"><button>GitHub</button></a>
                 <a href="https://www.linkedin.com/in/abigailgracehyde/" target="_blank"><button>LinkedIn</button></a>
@@ -248,7 +248,40 @@
 
     <button class="back-to-top" id="backToTop">Back to Top</button>
 
+    <script src="https://cdn.jsdelivr.net/npm/rough-notation/lib/rough-notation.iife.min.js"></script>
     <script>
+        // Rough Notation
+        // Rough Notation
+        const taglineElement = document.querySelector('#tagline');
+        const hciElement = document.querySelector('#hci');
+
+        // Create annotations for the elements
+
+        //highlighter colors
+        // purple: dbcdf0
+        // blue: C6DEF1
+        // orange: F7D9C4
+        // red: F9C6C9
+        // green: C9E4DE
+        // pink: F2C6DE
+
+        const taglineAnnotation = RoughNotation.annotate(taglineElement, {
+            type: 'highlight',
+            color: '#dbcdf0',
+            padding: 5,
+            animationDuration: 2000,
+            iterations: 2,
+        });
+        const hciAnnotation = RoughNotation.annotate(hciElement, {
+            type: 'underline',
+            color: '#101010',
+            padding: 5,
+        });
+
+        // Group annotations and show them together
+        const annotationGroup = RoughNotation.annotationGroup([taglineAnnotation, hciAnnotation]);
+        annotationGroup.show();
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('.scroll-link').forEach(link => {
             link.addEventListener('click', function(event) {
