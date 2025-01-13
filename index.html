@@ -33,7 +33,7 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #540f21;
+            color: #101010;
         }
         .container {
             display: flex;
@@ -171,7 +171,7 @@
             display: none; /* Initially hidden */
         }
         .back-to-top:hover {
-            background-color: #410b1a;
+            background-color: #ffffff;
         }
     </style>
 </head>
@@ -179,9 +179,9 @@
     <header>
         <div class="company-name">Abigail Hyde</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="#projects" class="scroll-link">Projects</a>
-            <a href="#contact" class="scroll-link">Contact</a>
+            <a href="index.html"><span id="home">Home</span></a>
+            <a href="#projects" class="scroll-link"><span id="projects">Projects</span></a>
+            <a href="#contact" class="scroll-link"><span id="contact">Contact</span></a>
         </nav>
     </header>
     <div class="container">
@@ -189,8 +189,8 @@
             <h2><span id="tagline">Hello! I'm Abigail Hyde.</span></h2>
             <p>I'm a computer scientist with a focus on <span id="hci">human-computer interaction</span> (HCI) and the history and contributions of women in computing. I graduated from BYU Hawaii with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at Georgia Tech, specializing in HCI.</p>
             <div class="buttons">
-                <a href="https://github.com/abigailhyde" target="_blank"><button>GitHub</button></a>
-                <a href="https://www.linkedin.com/in/abigailgracehyde/" target="_blank"><button>LinkedIn</button></a>
+                <a href="https://github.com/abigailhyde" target="_blank"><button><span id="githubText">GitHub</span></button></a>
+                <a href="https://www.linkedin.com/in/abigailgracehyde/" target="_blank"><button><span id="linkedinText">LinkedIn</span></button></a>
             </div>
         </div>
         <div class="photo">
@@ -238,7 +238,7 @@
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit"><span id="submit">Send Message</span></button>
         </form>
     </div>
 
@@ -246,16 +246,21 @@
         &copy; 2025 Abigail Hyde. All rights reserved.
     </footer>
 
-    <button class="back-to-top" id="backToTop">Back to Top</button>
+    <button class="back-to-top" id="backToTop"><span id="backToTopText">Back to Top</span></button>
 
     <script src="https://cdn.jsdelivr.net/npm/rough-notation/lib/rough-notation.iife.min.js"></script>
     <script>
-        // Rough Notation
+        
         // Rough Notation
         const taglineElement = document.querySelector('#tagline');
         const hciElement = document.querySelector('#hci');
-
-        // Create annotations for the elements
+        const githubButtonHoverElement = document.querySelector('#githubText');
+        const linkedinButtonHoverElement = document.querySelector('#linkedinText');
+        const backToTopHoverElement = document.querySelector('#backToTopText');
+        const homeHoverElement = document.querySelector('#home');
+        const projectsHoverElement = document.querySelector('#projects');
+        const contactHoverElement = document.querySelector('#contact');
+        const submitHoverElement = document.querySelector('#submit');
 
         //highlighter colors
         // purple: dbcdf0
@@ -276,6 +281,99 @@
             type: 'underline',
             color: '#101010',
             padding: 5,
+        });
+        
+        // The buttons
+        const linkedinButtonHoverAnnotation= RoughNotation.annotate(linkedinButtonHoverElement, {
+            type: 'highlight',
+            color: '#C9E4DE',
+            padding: 5,
+        });
+        const githubinButtonHoverAnnotation = RoughNotation.annotate(githubButtonHoverElement, {
+            type: 'highlight',
+            color: '#C9E4DE',
+            padding: 5,
+        });
+        const backToTopHoverAnnotation = RoughNotation.annotate(backToTopHoverElement, {
+            type: 'highlight',
+            color: '#C9E4DE',
+            padding: 5,
+        });
+        const homeHoverAnnotation = RoughNotation.annotate(homeHoverElement, {
+            type: 'box',
+            color: '#101010',
+            padding: 5,
+        });
+        const projectsHoverAnnotation = RoughNotation.annotate(projectsHoverElement, {
+            type: 'box',
+            color: '#101010',
+            padding: 5,
+        });
+        const contactHoverAnnotation = RoughNotation.annotate(contactHoverElement, {
+            type: 'box',
+            color: '#101010',
+            padding: 5,
+        });
+        const submitHoverAnnotation = RoughNotation.annotate(submitHoverElement, {
+            type: 'highlight',
+            color: '#F7D9C4',
+            padding: 5,
+        });
+
+        // linkedin button animation
+        linkedinButtonHoverElement.addEventListener('mouseover', () => {
+            linkedinButtonHoverAnnotation.show(); // Show annotation on hover
+        });
+        linkedinButtonHoverElement.addEventListener('mouseout', () => {
+            linkedinButtonHoverAnnotation.hide(); // Hide annotation when hover ends
+        });
+
+        // github button animation
+        githubButtonHoverElement.addEventListener('mouseover', () => {
+            githubinButtonHoverAnnotation.show(); // Show annotation on hover
+        });
+        githubButtonHoverElement.addEventListener('mouseout', () => {
+            githubinButtonHoverAnnotation.hide(); // Hide annotation when hover ends
+        });
+
+        // back to top button animation
+        backToTopHoverElement.addEventListener('mouseover', () => {
+            backToTopHoverAnnotation.show(); // Show annotation on hover
+        });
+        backToTopHoverElement.addEventListener('mouseout', () => {
+            backToTopHoverAnnotation.hide(); // Hide annotation when hover ends
+        });
+
+        // home button animation
+        homeHoverElement.addEventListener('mouseover', () => {
+            homeHoverAnnotation.show(); // Show annotation on hover
+        });
+        homeHoverElement.addEventListener('mouseout', () => {
+            homeHoverAnnotation.hide(); // Hide annotation when hover ends
+        });
+
+        // projects button animation
+        projectsHoverElement.addEventListener('mouseover', () => {
+            projectsHoverAnnotation.show(); // Show annotation on hover
+        });
+        projectsHoverElement.addEventListener('mouseout', () => {
+            projectsHoverAnnotation.hide(); // Hide annotation when hover ends
+        });
+
+        // contact button animation
+        contactHoverElement.addEventListener('mouseover', () => {
+            contactHoverAnnotation.show(); // Show annotation on hover
+        });
+        contactHoverElement.addEventListener('mouseout', () => {
+            contactHoverAnnotation.hide(); // Hide annotation when hover ends
+        });
+
+        // submit button animation
+        submitHoverElement.addEventListener('mouseover', () => {
+            submitHoverAnnotation.show(); // Show annotation on hover
+        });
+        submitHoverElement.addEventListener('mouseout', () => {
+            submitHoverAnnotation.hide(); // Hide annotation when hover ends
         });
 
         // Group annotations and show them together
