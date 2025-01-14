@@ -7,7 +7,6 @@ const backToTopHoverElement = document.querySelector('#backToTopText');
 const homeHoverElement = document.querySelector('#home');
 const projectsHoverElement = document.querySelector('#projectsLink');
 const contactHoverElement = document.querySelector('#contactLink');
-const submitHoverElement = document.querySelector('#submit');
 const footerElement = document.querySelector('#footerText');
 const byuhElement = document.querySelector('#byuh')
 const gtElement = document.querySelector('#gt')
@@ -59,6 +58,7 @@ annotationGroup.show();
 
 footerAnnotation.show();
 
+
 // The buttons
 const linkedinButtonHoverAnnotation= RoughNotation.annotate(linkedinButtonHoverElement, {
     type: 'highlight',
@@ -88,11 +88,6 @@ const projectsHoverAnnotation = RoughNotation.annotate(projectsHoverElement, {
 const contactHoverAnnotation = RoughNotation.annotate(contactHoverElement, {
     type: 'box',
     color: '#999999',
-    padding: 5,
-});
-const submitHoverAnnotation = RoughNotation.annotate(submitHoverElement, {
-    type: 'highlight',
-    color: '#F7D9C4',
     padding: 5,
 });
 
@@ -142,14 +137,6 @@ contactHoverElement.addEventListener('mouseover', () => {
 });
 contactHoverElement.addEventListener('mouseout', () => {
     contactHoverAnnotation.hide(); // Hide annotation when hover ends
-});
-
-// submit button animation
-submitHoverElement.addEventListener('mouseover', () => {
-    submitHoverAnnotation.show(); // Show annotation on hover
-});
-submitHoverElement.addEventListener('mouseout', () => {
-    submitHoverAnnotation.hide(); // Hide annotation when hover ends
 });
 
 // Smooth scrolling for navigation links

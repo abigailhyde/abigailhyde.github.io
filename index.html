@@ -243,6 +243,12 @@
                 object-fit: cover; /* Maintain the aspect ratio and cover the area */
             }
         }
+
+        @media (min-width: 1200px) {
+            header, .container, .projects, .contact {
+                padding: 10px 25%; /* Increased padding for large screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -257,7 +263,7 @@
     <div class="container">
         <div class="about-me">
             <h2><span id="tagline">Hello! I'm Abigail Hyde.</span></h2>
-            <p>I'm a computer scientist with a focus on human-computer interaction <span id="hci">(HCI)</span> and the history and contributions of women in computing. I graduated from <span id="byuh">BYU-Hawaii</span> with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at <span id="gt">Georgia Tech</span>, specializing in HCI.</p>
+            <p>I'm a computer scientist with a focus on human-computer interaction <span id="hci">(HCI)</span> and the history and contributions of women in computing. I graduated from <span id="byuh">BYU-Hawaii</span> with a Bachelor's degree in Computer Science, where I built a solid foundation in software development, algorithms, and problem-solving. Currently, I am pursuing my Master's degree in Computer Science at <span id="gt">Georgia Tech</span>, specializing in HCI. I am located in Hawaii.</p>
             <div class="buttons">
                 <a href="https://github.com/abigailhyde" target="_blank"><button><span id="githubText">GitHub</span></button></a>
                 <a href="https://www.linkedin.com/in/abigailgracehyde/" target="_blank"><button><span id="linkedinText">LinkedIn</span></button></a>
@@ -269,7 +275,7 @@
     </div>
 
     <div class="projects" id="projects">
-        <h2>Projects</h2>
+        <h2 id="projectHeader">Projects</h2>
         <div class="project-cards">
             <div class="card">
                 <img src="images/fschat.png" alt="Project 1">
@@ -303,13 +309,8 @@
     </div>
 
     <div class="contact" id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit"><span id="submit">Send Message</span></button>
-        </form>
+        <h2 id="contactHeader">Contact Me</h2>
+        <p><a href="mailto:abigailghyde@gmail.com">Send me an email!</a></p>
     </div>
 
     <footer>
