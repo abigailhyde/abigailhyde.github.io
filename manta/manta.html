@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manta Size Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f9;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    input[type="number"] {
+      width: 100px;
+      padding: 5px;
+      margin: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Manta Size from Pixel Coordinates Calculator</h2>
+
+    <h3>Enter coordinates for Line 1 (wing to wing):</h3>
+    <label for="W1x">W1 (x):</label>
+    <input type="number" id="W1x" placeholder="W1 (x)">
+    <label for="W1y">W1 (y):</label>
+    <input type="number" id="W1y" placeholder="W1 (y)">
+
+    <label for="W2x">W2 (x):</label>
+    <input type="number" id="W2x" placeholder="W2 (x)">
+    <label for="W2y">W2 (y):</label>
+    <input type="number" id="W2y" placeholder="W2 (y)">
+    
+    <h3>Enter coordinates for Line 2 (laser to laser):</h3>
+    <label for="L1x">L1 (x):</label>
+    <input type="number" id="L1x" placeholder="L1 (x)">
+    <label for="L1y">L1 (y):</label>
+    <input type="number" id="L1y" placeholder="L1 (y)">
+
+    <label for="L2x">L2 (x):</label>
+    <input type="number" id="L2x" placeholder="L2 (x)">
+    <label for="L2y">L2 (y):</label>
+    <input type="number" id="L2y" placeholder="L2 (y)">
+
+    <h3>Enter distance between lasers (cm):</h3>
+    <label for="laserdist">Distance (cm):</label>
+    <input type="number" id="laserdist" placeholder="Distance (cm)">
+    
+    <button onclick="calculateDistances()">Calculate Lengths</button>
+    
+    <div class="result" id="result"></div>
+
+    <img src="./mantadiagram.png">
+  </div>
+
+  <script>
+    function calculateDistances() {
+      // Get values from inputs for both lines
+      var W1x = parseFloat(document.getElementById('W1x').value);
+      var W1y = parseFloat(document.getElementById('W1y').value);
+      var W2x = parseFloat(document.getElementById('W2x').value);
+      var W2y = parseFloat(document.getElementById('W2y').value);
+      var L1x = parseFloat(document.getElementById('L1x').value);
+      var L1y = parseFloat(document.getElementById('L1y').value);
+      var L2x = parseFloat(document.getElementById('L2x').value);
+      var L2y = parseFloat(document.getElementById('L2y').value);
+      var laserdist = parseFloat(document.getElementById('laserdist').value);
+
+      // Check if all values are valid numbers
+      if (isNaN(W1x) || isNaN(W1y) || isNaN(W2x) || isNaN(W2y) ||
+          isNaN(L1x) || isNaN(L1y) || isNaN(L2x) || isNaN(L2y) || isNaN(laserdist)) {
+        document.getElementById('result').innerText = 'Please enter valid numbers for all coordinates and distance.';
+        return;
+      }
+
+      // Calculate the distance for the first line (W1 to W2)
+      var line1Length = Math.sqrt(Math.pow(W2x - W1x, 2) + Math.pow(W2y - W1y, 2));
+
+      // Calculate the distance for the second line (L1 to L2)
+      var line2Length = Math.sqrt(Math.pow(L2x - L1x, 2) + Math.pow(L2y - L1y, 2));
+
+      // Calculate the mantalength based on the formula
+      var mantalength = (line1Length * laserdist) / line2Length;
+
+      // Display the result
+      document.getElementById('result').innerHTML = `Length of Line 1 (W1 to W2): ${line1Length.toFixed(2)}<br>
+                                                      Length of Line 2 (L1 to L2): ${line2Length.toFixed(2)}<br>
+                                                      Real length from W1 to W2: ${mantalength.toFixed(2)} cm`;
+    }
+  </script>
+</body>
+</html>
